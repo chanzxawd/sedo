@@ -1,7 +1,7 @@
-import VideoList from '@/components/VideoList'
-import React from 'react'
+import VideoList      from '@/components/VideoList'
+import React          from 'react'
 import { useSession } from 'next-auth/react'
-import Link from 'next/link'
+import Link           from 'next/link'
 
 export default function Home() {
   const { data: session } = useSession()

@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { SessionProvider } from 'next-auth/react'
 import Head from "next/head";
+import Navbar from "@/components/Navbar";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -16,7 +17,12 @@ export default function App({ Component, pageProps }: AppProps) {
           referrerPolicy="no-referrer" 
         />
       </Head>
-    <Component {...pageProps} />
+      <main>
+        <div>
+          <div><Navbar/></div>
+          <Component {...pageProps} />
+        </div>
+      </main>
   </SessionProvider>
   );
 }

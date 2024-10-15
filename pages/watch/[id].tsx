@@ -137,13 +137,17 @@ const VideoDetailPage = () => {
           <div key={command.id} className="flex flex-col">
             <li className="flex flex-col bg-[#303030] p-2 mb-2 rounded">
               <div className="flex items-center">
-                <strong className="mr-2">{command.user?.username || 'Unknown User'}:</strong>
+                <strong className="mr-2" style={{
+                  color: command.user?.username === "admin" ? 'blue' : undefined
+                }}>{command.user?.username || 'Unknown User'}:</strong>
                 <span className="flex-1">{command.content}</span>
               </div>
               {/* Cek jika command ini memiliki balasan */}
               {commands.filter(cmd => cmd.replyTo === command.id).map(reply => (
                 <div key={reply.id} className="flex items-center bg-[#404040] p-2 mb-2 rounded ml-4 mt-2">
-                  <strong className="mr-2 text-gray-300">{reply.user?.username || 'Unknown User'} (Reply):</strong>
+                  <strong className="mr-2 text-gray-300" style={{
+                    color: reply.user?.username === "admin" ? 'blue' : undefined
+                  }}>{reply.user?.username || 'Unknown User'} (Reply):</strong>
                   <span className="flex-1">{reply.content}</span>
                 </div>
               ))}
@@ -156,3 +160,4 @@ const VideoDetailPage = () => {
 };
 
 export default VideoDetailPage;
+

@@ -54,6 +54,9 @@ const SignInPage = () => {
         </div>
         <button type="submit" className="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700">Login</button>
       </form>
+      <p className="mt-4 text-center text-sm text-gray-600">
+        Don't have an account? <a href="/auth/signup" className="text-blue-500">Sign up</a>
+      </p>
     </div>
   );
   
